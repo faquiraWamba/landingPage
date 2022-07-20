@@ -1,0 +1,211 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: jost ;
+    color: #111111;
+}
+header,nav,#navbarList, .logo, #homeDemoList, .newCollection, #homePage{
+    display: flex;
+}
+header,nav,#navbarList{
+    justify-content: space-between;
+}
+header{
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 2% 5% 0;
+    position: fixed;
+    align-items: center;
+}
+.slideUp{
+    background-color: rgba(199, 193, 193, 0.755);
+    transition: 0.5s;
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+.slideDown{
+    transition: 0.5s;
+}
+li span{
+    padding: 0px 5px;
+    border-radius: 100%;
+    background-color: #111111;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 1px;
+}
+nav{align-items: center;
+    width: 50%;}
+.logo{
+    align-items: center;
+    width: 25%;
+}
+nav ul{width: 75%;}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration:none;
+}
+#home:hover + #homeDemoList{
+    opacity: 1;
+}
+#homeDemoList{
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    width: 67%;
+    justify-content: space-between;
+    padding: 1% 2% 2%;
+    right: 15%;
+    top: 60px;
+}
+h5{
+    font-size: 14px;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+.demoElement{
+    font-size: 16px;
+    line-height: 30px;
+}
+.secondNewCollection{
+    display: none;
+}
+#homePage, #homePages{
+    background-size: cover;
+    padding: 0 5%;
+    height: 100vh;
+    align-items: center;
+        }
+#homePage{
+    background-image: url("D:/Bhent/Html_et_css/htmlCssJsProject/assets/collection1.jpg");
+}
+#homePages{
+    background-image: url("D:/Bhent/Html_et_css/htmlCssJsProject/assets/collection2.jpg");
+   
+}
+h1{
+    font-size: 68px;
+    line-height: 77px;
+}
+br{
+    margin-top: -15px;
+}
+.button{
+    background-color: #111111;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 17px;
+    width: 28%;
+    margin-top: 30px;
+}
+.newCollection span, .newCollection p{
+    font-size: 17px;
+}
+.newCollection span{
+    margin-bottom: 15px;
+}
+.newCollection p{
+    margin-top: 20px;
+}
+.newCollection{
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 35%;
+    transition: 1s;
+}
+.firstNewCollection{
+    width: 90%;
+    height: 90%;
+}
+#collectionFirstSlid, #collectionSecondSlid{
+  width: 12px;
+  height: 12px;
+  border: #111111 solid;
+  border-radius: 50%;
+}
+#collectionFirstSlid{
+    background-color:#111111;
+    color: white;
+}
+
+.collectionSlidders{
+    height: 3%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    width: 5%;
+    position: absolute;
+    border: solid;
+    margin: 0 5%;
+    bottom: 5%;
+}
+.newCollectionWrap{
+    position: relative;
+    height: 100vh;
+}
+.section{
+    height: 200vh;
+}
+.display {
+    display: flex !important;
+}
+.none {
+    display: none !important;
+}
+#nav_main{
+    display: none;
+    background-color: rgba(199, 193, 193, 0.755);
+    width: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*}
+.newCollection{
+    width: 30%;
+}
+.newArrivalImage{
+    width: 70%;
+}*/
+
+
+
+@media  screen and (max-width:768px) {
+    #navbarList{
+        flex-direction: column;
+        background-color: rgba(199, 193, 193, 0.755);
+        width: 60%;
+        display: none;
+        position: absolute;
+        top: 100%;
+    }
+    #nav_main{
+        display: block;
+    }
+    .header{
+        align-items:flex-start;
+    }
+    nav{
+        justify-content: end;
+        width: 30%;
+        position: relative;
+    }
+}
