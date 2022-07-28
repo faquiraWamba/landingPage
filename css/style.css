@@ -4,10 +4,10 @@
     font-family: jost ;
     color: #111111;
 }
-header,nav,#navbarList, .logo, #homeDemoList, .newCollection, #homePage{
+header,nav,#navbarList, .logo, .newCollection, #homePage{
     display: flex;
 }
-header,nav,#navbarList{
+header,#navbarList{
     justify-content: space-between;
 }
 header{
@@ -17,9 +17,10 @@ header{
     padding: 2% 5% 0;
     position: fixed;
     align-items: center;
+    z-index: 100;
 }
 .slideUp{
-    background-color: rgba(199, 193, 193, 0.755);
+    background-color:white;
     transition: 0.5s;
     padding-bottom: 10px;
     padding-top: 0;
@@ -37,23 +38,24 @@ li span{
     top: 1px;
 }
 nav{align-items: center;
-    width: 50%;}
+    width: 30%;
+    justify-content: flex-end;}
 .logo{
     align-items: center;
-    width: 25%;
+    width: 70%;
+
 }
 nav ul{width: 75%;}
 ul{
+    padding: 0%;
     list-style-type: none;
 }
 a{
     text-decoration:none;
 }
-#home:hover + #homeDemoList{
-    opacity: 1;
-}
+
 #homeDemoList{
-    opacity: 0;
+    display: none;
     position: absolute;
     background-color: white;
     width: 67%;
@@ -79,20 +81,27 @@ h5{
     padding: 0 5%;
     height: 100vh;
     align-items: center;
-        }
+    animation: background_transition 1s;   }
+@keyframes background_transition {
+    from{
+        opacity: 0.7;
+    }
+}
 #homePage{
-    background-image: url("D:/Bhent/Html_et_css/htmlCssJsProject/assets/collection1.jpg");
+    background-image: url("../assets/collection1.jpg");
 }
 #homePages{
-    background-image: url("D:/Bhent/Html_et_css/htmlCssJsProject/assets/collection2.jpg");
+    background-image: url("../assets/collection2.jpg");
    
 }
 h1{
+    animation: bottom_topH1 0.7s;
     font-size: 68px;
     line-height: 77px;
 }
-br{
-    margin-top: -15px;
+@keyframes bottom_topH1{
+    from{transform: translateY(10px);
+        opacity: 0;}
 }
 .button{
     background-color: #111111;
@@ -101,38 +110,55 @@ br{
     border-radius: 4px;
     font-size: 17px;
     width: 28%;
+    text-align: center;
     margin-top: 30px;
+    animation:bottom_topBTN 1.2s;
+}
+@keyframes bottom_topBTN{
+    from{transform: translateY(16px);
+        opacity: 0;}
 }
 .newCollection span, .newCollection p{
     font-size: 17px;
 }
 .newCollection span{
     margin-bottom: 15px;
+    animation: bottom_topS 0.5s;
+}
+@keyframes bottom_topS{
+    from{transform: translateY(8px);
+        opacity: 0;}
 }
 .newCollection p{
     margin-top: 20px;
+    animation: bottom_topP 1s;
+}
+@keyframes bottom_topP{
+    from{transform: translateY(12px);
+        opacity: 0;}
 }
 .newCollection{
     justify-content: flex-end;
     flex-direction: column;
     width: 35%;
-    transition: 1s;
-}
+    transition: 5s;}
 .firstNewCollection{
     width: 90%;
     height: 90%;
 }
-#collectionFirstSlid, #collectionSecondSlid{
+.firstSlid, .secondSlid{
   width: 12px;
   height: 12px;
   border: #111111 solid;
   border-radius: 50%;
 }
-#collectionFirstSlid{
+.firstSlid{
     background-color:#111111;
     color: white;
 }
-
+.secondSlid:hover{
+    background-color: #111111;
+}
 .collectionSlidders{
     height: 3%;
     display: flex;
@@ -140,7 +166,6 @@ br{
     margin-top: 80px;
     width: 5%;
     position: absolute;
-    border: solid;
     margin: 0 5%;
     bottom: 5%;
 }
@@ -148,44 +173,472 @@ br{
     position: relative;
     height: 100vh;
 }
-.section{
-    height: 200vh;
+.articlesWrap{
+    height: 100vh; 
+    width: 90%;
+    margin: 0 5% ;
+   display: flex;
+   flex-direction: column;
 }
 .display {
     display: flex !important;
 }
-.none {
-    display: none !important;
-}
+.none { display: none !important;}
 #nav_main{
     display: none;
-    background-color: rgba(199, 193, 193, 0.755);
+    border: none;
+    background-color: transparent;
     width: 20%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*}
-.newCollection{
-    width: 30%;
+a{
+    position: relative;
 }
-.newArrivalImage{
-    width: 70%;
-}*/
+li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 2%;
+    opacity: 0;
+    height: 2px;
+    background-color: #c8815f;
+    
+    transition: 0.5s;
+}
 
+li a:hover::after{
+    width: 100%;
+    opacity:1 ;
+}
+.articleHead{
+    height: 15%;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 2%;
+}
+.articlesList{
+    display: flex;
+    width: 100%;
+position: relative;
+overflow: hidden;}
+.articleDescription span{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 100px;
+    bottom: -20%;
+    margin-left: 20px;
+}
+.articleDescription{
+    position: absolute;
+    bottom: 10%;
+}
+.group{
+    overflow: hidden;
+    width: 290px;
+}
+.article img{
+    height: 400px;
+    width: 290px;
+    transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+}
+.article img:hover{
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+.articleBtnSlidders{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+}
+.previous, .next{
+    border: solid 1px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.previous:hover, .next:hover{
+   background-color: #c8815f;
+   color: white;
+   border-color: #c8815f;
+}
+.previous:hover i, .next:hover i{
+    color: white;
+ }
+.bestSellers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bestSellers h2{
+    font-weight: 600;
+    font-size: 29px;
+}
+.bestSellerTitle{
+    text-align: center;
+    display: flex;
+    margin-top: 2%;
+}
+.bestSellerTitle h3, .thirdBannerText{
+    color: gray;
+
+}
+.bestsellerArticle{
+    position: relative;
+}
+.bestSellerDescription:hover{
+    color: #ae7154;
+}
+.bestSellerDescription{
+    margin-top: 5%;
+}
+.bestSellerCollection{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    flex-wrap: wrap;
+}
+.articleAlone img, .articleWear img{
+    width: 100%;
+    height: 100%;
+}
+.bestSellerArticleWrap{
+    width: 24%;
+    margin-top: 3%;
+}
+
+.articleWear{
+    position: absolute;
+    top: 0;
+    animation: articleVisible  0.4s;   }
+    @keyframes articleVisible {
+        0%{
+            transform: translateY(5%);
+            opacity: 0;
+        }
+        20%{
+            transform: translateY(4%);
+            opacity: 0.2;
+        }
+        40%{
+            transform: translateY(3%);
+            opacity: 0.4;
+        }
+        60%{
+            transform: translateY(2%);
+            opacity: 0.6;
+        }
+        80%{
+            transform: translateY(1%);
+            opacity: 0.8;
+        }
+        100%{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+.appreciation, .addToCard{
+    position: absolute;
+    margin-bottom:15% ;
+}
+.appreciation{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    height: 35%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.appreciationIcon{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: iconVisible  0.3s; 
+}
+@keyframes iconVisible {
+    0%{
+        transform: translateX(10%);
+        opacity: 0.3;
+    }
+    50%{
+        transform: translateX(5%);
+        opacity: 0.7;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    }
+.appreciationIcon:hover i{
+    color: #ae7154;
+}
+.addToCard{
+    background-color: white;
+    border: none;
+    bottom: -5%;
+    padding: 7px 28%;
+    font-size: 16px;
+    left: 8%;
+    border-radius: 5px;
+    position: absolute;
+    animation: btnVisible  0.5s; 
+}
+@keyframes btnVisible {
+    0%{
+        transform: translateY(10%);
+        opacity: 0.3;
+    }
+    50%{
+        transform: translateY(5%);
+        opacity: 0.7;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    }
+   
+.addToCard:hover{
+    background-color: black;
+    color: white;
+}
+.collectionNone{
+    display: none !important;
+}
+.collectionDisplay{
+    display: flex !important;
+    animation: btnVisible  0.5s;
+}
+.bestSellerArticleWrap{
+    margin-bottom: 2%;
+}
+.explore{
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 16px;
+    border: solid 1px;
+}
+.explore::after{
+    background-color: #c8815f;
+}
+.explore:hover{
+    background-color: #c8815f;
+    color: white;
+    transition: 0.5s;
+    border:none
+}
+.selected{
+    border-bottom: solid 1px #c8815f;
+    padding-bottom:3px ;
+    color: #c8815f;
+}
+h3 a{
+    margin-left: 15px;
+    color: gray;
+}
+.banner{
+    display: flex;
+    width: 88%;
+margin: 0 5%;}
+.bannerImg img{
+    width: 100%; height: 98%;}
+    .bannerImg{ width: 50%; height: 100%; }
+    .bannerDescription{
+        width: 50%;
+        height: 92%;
+        text-align: center;
+        background-color: f6e5cf;
+    }
+    .banner{
+        display: flex;
+        height: 80vh;
+        width: 86%;
+        margin:  2% 7%;}
+        .bannerDescription{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f6e5cf;
+            height: 100%;
+        }
+    .secondBannerText{font-size: 35px; font-weight: 700;}
+    .firstBannerText{font-size: 18px; font-weight: 500;}
+.customersReview{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.commits{
+    min-width:98.7vw;
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#textSlidWrap{width: 300vw; display: flex;}
+.commitSlider{width: 100% ; height: 70%; display: flex; overflow:hidden }
+.slidChange{display: flex; }
+.customersReview h3{font-size: 35px;}   
+.commits p{
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+}
+#firstTextSlid, #secondTextSlid, #thirdTextSlid{
+    width: 8px;
+    height: 8px;
+    border-radius: 40%;
+    background-color: rgba(202, 195, 195, 0.788);
+    border: none;
+    margin: 5px;
+}
+#firstTextSlid:hover, #secondTextSlid:hover, #thirdTextSlid:hover{
+    background-color: black;
+}
+.checked{background-color: black !important;}
+.reviewFoot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    height: 25%;
+}
+.instagram{font-weight: 600;}
+.news{
+    height: 95vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.newStyle{
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.stylepic{
+    height: 90%;
+    width: 19.8%;
+    overflow: hidden;
+}
+.stylepic img{
+    height: 100%;
+    width: 100%;
+    transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+}
+.stylepic img:hover{
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+.newsLetter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 35%;
+    width: 50%;
+}
+.newsLetter span{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.newsLetter p{
+    font-size: 40px;
+}
+input{
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+.logIn{
+    display: flex;
+    justify-content: space-between;
+    width: 90%; 
+    padding-top: 5%;
+    padding-bottom: 2%;
+    border-bottom: solid black 1px;
+}
+.subscribe{
+    border: none;
+    background-color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+.twenty{color: red; font-size: 35px; text-decoration: none; }
+footer{
+    color: white;
+    height: 60vh;
+    padding: 10vh 5%;
+    background-color:#111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.informations{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info h5, .copyright{
+    color: white; 
+    font-size: 18px;}
+.infoList li a , .infoList li{ 
+    color:#ffffff; 
+    opacity: 80%; 
+    font-size: 18px; 
+    line-height: 35px;}
+h5{line-height: 60px;}
+.bankAccount i{color: #ffffff; opacity: 80%;}
+.account{
+    border-top: grey solid 1px; opacity: 80%;
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-between;}
+.bankAccount{
+    display: flex; 
+    width: 30%; 
+    justify-content: space-between;}
+select{
+    outline: none;
+    border: none; 
+    background-color: #111111; 
+    color: white; 
+    font-size: 17px;}
+select:hover{color:rgb(240, 159, 173);}
+option{background-color: white;}
+
+
+
+
+
+
+
+
+    
 
 
 @media  screen and (max-width:768px) {
@@ -193,7 +646,6 @@ br{
         flex-direction: column;
         background-color: rgba(199, 193, 193, 0.755);
         width: 60%;
-        display: none;
         position: absolute;
         top: 100%;
     }
@@ -208,4 +660,63 @@ br{
         width: 30%;
         position: relative;
     }
+    #homeDemoList{
+        width: 600px;
+    }
+    .newCollection{
+        width: 70%;
+    }
+    .navDisplay {
+        display: flex !important;
+    }
+    .navNone {
+        display: none !important;
+    }
+    .button{
+        width: 35%;
+        font-size: 14px;
+        padding: 5px 7px;
+    }
+    h1{font-size: 50px;}
+    .bestSellerDescription,.bestSellerPrice{font-size: 12px;}
 }
+@media  screen and (max-width:1024px){
+    nav{width: 50%;}
+    .logo{width: 50%;}
+    .newCollection{width: 55%;}
+    #homePage,#homePages{background-position: center;}
+    
+}
+@media  screen and (max-width:561px){
+    .newCollection{width: 75%;}
+    .button{width: 30%;}
+}
+@media  screen and (max-width:442px){
+    .newCollection{width: 100%;}
+    .button{width: 30%;}
+}
+@media  screen and (max-width:344px){
+    .newCollection{width: 100%;}
+    .button{width: 50%; }
+}
+@media screen and (max-width:615px){
+    .group{width: 150px;}
+    .article img{
+        height: 200px;
+        width: 150px;}
+    h2{font-size: 25px;}
+    .newCollectioWrap{margin-bottom: 0;}
+    .articleDescription span{padding: 5px 35px;}
+    .articleHead{padding-top: 10%; height: 30%;}
+    .articleBtnSlidders{margin-top: 15%; }
+    .bestSellerDescription,.bestSellerPrice{font-size: 8px;}
+}
+.corps{height: 150px;}
+.faqui{
+    border: solid 2px pink;
+    width: 100%;
+    height: 100%; display: flex;  }
+.wambs{min-width:100vw;
+    height: 100%;
+
+        border: solid green 1px;}

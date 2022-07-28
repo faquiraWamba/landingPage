@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost"> 
@@ -13,9 +15,9 @@
     <header id="header">
         <a href="#" class="logo"><img src="assets/logo.svg" alt="logo"></a>
         <nav>
-            <button id="nav_main"><i class="fas fa-list"></i></button>
-            <ul id="navbarList">
-                <li>
+            <button id="nav_main"><i class="fas fa-bars"></i></button>
+            <ul id="navbarList" class="navNone">
+                <li >
                     <a href="#" id="home">Home</a>
                     <div id="homeDemoList">
                         <ul class="homeDemo">
@@ -71,7 +73,7 @@
                                 
                                 
                                 
-                        </div>
+                        
                         <div class="homeDemo3"></div>
                         <div class="homeDemo4"></div>
                     </div>
@@ -103,15 +105,465 @@
                 </div>
             </div>
             <div class="collectionSlidders">
-                <button id="collectionFirstSlid"> </button>
-                <button id="collectionSecondSlid"></button>
+                <button id="collectionFirstSlid" class="firstSlid"> </button>
+                <button id="collectionSecondSlid" class="secondSlid"></button>
             </div>
         </section>
-        <div class="section"></div>
+        <section class="articlesWrap">
+            <div class="articleHead">
+                <h2>Shop by Categories</h2>
+                <div class="articleBtnSlidders">
+                    <div id="leftBtnSlid" class="previous"><i class="fas fa-angle-left"></i></div>
+                    <div id="secondBtnSlid" class="next"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+            <div class="articlesList">
+                <div class="article kid">
+                    <div class="group">
+                        <img src="assets/kids.jpg" alt="">
+                        <div class="articleDescription">
+                            <span>items(3)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article shirt">
+                    <div class="group">
+                        <img src="assets/shirts.jpg" alt="">
+                        <div class="articleDescription">
+                            <span>kids(1)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article ">
+                    <div class="group">
+                        <img src="assets/Group.jpg" alt="">
+                        <div class="articleDescription">
+                            <span>shirts(9)</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="article maskGroup">
+                    <div class="group">
+                        <img src="assets/Mask-Group.jpg" alt="">
+                        <div class="articleDescription">
+                            <span>Mens(5)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article groups">
+                    <div class="group">
+                        <img src="assets/Groups.jpg" alt="">
+                        <div class="articleDescription">
+                            <span>items(3)</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+        <section class="bestSellers">
+                <h2>Best Sellers</h2>
+                <div class="bestSellerTitle">
+                    <h3><a href="#" id="menBtnCollection" class="selected">Mens</a></h3>
+                    <h3><a href="#" id="womenBtnCollection">Womens</a></h3>
+                    <h3><a href="#" id="kidsBtnCollection">Kids</a></h3>
+                </div>
+                <div class="bestSellerCollection" id="menCollection">
+                    <div  class="bestSellerArticleWrap">
+                        <div id="tab-chose" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/chose1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-chose-hidden" class="none articleWear" href="#"><img src="assets/chose2.jpg" alt=""></a>
+                            
+                            <div id="tab-chose-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-chose-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-bymba" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/bymba.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-bymba-hidden" class="none articleWear" href="#"><img src="assets/bymba801.jpg" alt=""></a>
+                            
+                            <div id="tab-bymba-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-bymba-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-coastal" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/coastal1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-coastal-hidden" class="none articleWear" href="#"><img src="assets/coastal2.jpg" alt=""></a>
+                            
+                            <div id="tab-coastal-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-coastal-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-stone" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/stonewashed1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-stone-hidden" class="none articleWear" href="#"><img src="assets/stonewashed2.jpg" alt=""></a>
+                            
+                            <div id="tab-stone-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-stone-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-tampa" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/tampa1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-tampa-hidden" class="none articleWear" href="#"><img src="assets/tampa2.jpg" alt=""></a>
+                            
+                            <div id="tab-pampa-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-pampa-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-mens" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/mens-stardan1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-mens-hidden" class="none articleWear" href="#"><img src="assets/mens-stardan2.jpg" alt=""></a>
+                            
+                            <div id="tab-mens-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-mens-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-prince" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/prince-tennis1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-prince-hidden" class="none articleWear" href="#"><img src="assets/prince-tennis2.jpg" alt=""></a>
+                            
+                            <div id="tab-prince-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-prince-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-nud" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/nud1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-nud-hidden" class="none articleWear" href="#"><img src="assets/nud2.jpg" alt=""></a>
+                            
+                            <div id="tab-nud-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-nud-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                </div>
+                <div class="bestSellerCollection collectionNone" id="womenCollection">
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-tyler" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#" ><img src="assets/tyler2.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-tyler-hidden" class="none articleWear" href="#"><img src="assets/tyler1.jpg" alt=""></a>
+                            
+                            <div id="tab-tyler-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-tyler-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-iowa" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/iowa1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-iowa-hidden" class="none articleWear" href="#"><img src="assets/iowa2.jpg" alt=""></a>
+                            
+                            <div id="tab-iowa-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-iowa-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-mika" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/mika1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-mika-hidden" class="none articleWear" href="#"><img src="assets/mika2.jpg" alt=""></a>
+                            
+                            <div id="tab-mika-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-mika-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-raven" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/raven1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-raven-hidden" class="none articleWear" href="#"><img src="assets/raven2.jpg" alt=""></a>
+                            
+                            <div id="tab-raven-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-raven-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                </div>
+                <div class="bestSellerCollection collectionNone" id="kidCollection">
+                    <div class="bestSellerArticleWrap">
+                        <div id="tab-slc" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#" ><img src="assets/slc1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-slc-hidden" class="none articleWear" href="#"><img src="assets/slc2.jpg" alt=""></a>
+                            
+                            <div id="tab-slc-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-slc-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                    <div class="bestSellerArticleWrap ">
+                        <div id="tab-little" class ="bestsellerArticle">
+                            <div class="articleImg">
+                                <a class="articleAlone" href="#"><img src="assets/little1.jpg" alt=""></a> </div>
+                                
+                                <a id="tab-little-hidden" class="none articleWear" href="#"><img src="assets/little2.jpg" alt=""></a>
+                            
+                            <div id="tab-little-none" class="none appreciation">
+                                <div class="appreciationIcon"><i class="fas fa-search"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-heart"></i></div>
+                                <div class="appreciationIcon"><i class="fas fa-exchange-alt"></i></div>
+                            </div>
+                            <button id="tab-little-invisible" class="none addToCard">Quick Add</button>
+                        </div>
+                        <div class="bestSellerDescription">Nike Air Max 97 OG</div>
+                        <div class="bestSellerPrice">$229.00</div>
+                    </div>
+                </div>
+                <a class="explore">Explore More</a>
+            
+           
+
+        </section>
+        <section class="banner">
+            <div class="bannerImg"><img src="assets/banner-fashion-01-1.jpg.webp" alt=""></div>
+            <div class="bannerDescription">
+                <span class="firstBannerText">SALE EVENT</span>
+                <span class="secondBannerText">Summer Shirt</span>
+                <span class="secondBannerText">Limited Offer – $20</span>
+                <span class="thirdBannerText">Until 12/27/21. Use code FESTIVE at checkout</span>
+                <button class="button">Shop Now</button>
+            </div>
+        </section>
+        <section class="customersReview"> 
+            <div class="commitSlider " >
+                <div id="textSlidWrap">
+                    <div class="commits" id="slider1">
+                        <h3>Customers Review</h3>
+                        <p>"As women who value our health, we're here to do what we do <br> best - 
+                            roll up our sleeves to get it done <br>right." </p>
+                        <span>Randy workman</span>
+                    </div>
+                    
+                    <div class="commits" id="slider2">
+                        <h3>Customers Review</h3>
+                        <p>"As women who value our health, we're here to do what we do <br> best - 
+                            roll up our sleeves to get it done <br>right." </p>
+                        <span>Randy workman</span>
+                    </div>
+                    <div class="commits" id="slider3">
+                        <h3>Customers Review</h3>
+                        <p>"As women who value our health, we're here to do what we do <br> best - 
+                            roll up our sleeves to get it done <br>right." </p>
+                        <span>Randy workman</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reviewFoot">
+                <div class="slidChange">
+                    <a href="#" class="checked" id="firstTextSlid"></a>
+                    <a href="#" id="secondTextSlid"></a>
+                    <a href="#" id="thirdTextSlid"></a>
+                </div>
+                <div class="instagram"><i class="fab fa-instagram"></i> Follow Us @Uxper</div>
+            </div>
+            
+        </section>
+        <section class="news">
+            <div class="newStyle">
+                <div class="stylepic">
+                    <img src="assets/cuteCouple.jpg" alt="">
+                </div>
+                <div class="stylepic">
+                    <img src="assets/swag_girl.jpg" alt="">
+                </div>
+                <div class="stylepic">
+                    <img src="assets/freeGirl.jpg" alt="">
+                </div>
+                <div class="stylepic">
+                    <img src="assets/couple.jpg" alt="">
+                </div>
+                <div class="stylepic">
+                    <img src="assets/mode.jpg" alt="">
+                </div>
+            </div>
+            <div class="newsLetter">
+                <span>NewsLetter</span>
+                <p>Sign up and get up to <b class="twenty">20% </b> off your first purchase</p>
+                <div class="logIn">
+                    <input type="email" name="" id="" placeholder="Enter your email">
+                    <button type="submit" class="subscribe">Subscribe</button>
+                </div>
+            </div>
+        </section>
 
     </div>
+    <footer>
+        <div class="informations">
+            <div class="info">
+                <h5>About Shop</h5>
+                <ul class="infoList">
+                    <li>Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit. Read More</li>
+                    <li><a href="#">E. hello@uxper.co                    </a></li>
+                    <li><a href="#">T. (00) 342 489 33</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <h5>Company</h5>
+                <ul class="infoList">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Store locator</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <h5>Customer Care</h5>
+                <ul class="infoList">
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Help & FAQs</a></li>
+                    <li><a href="#">Return My Order</a></li>
+                    <li><a href="#">Refer A Friend</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <h5>Quick Links</h5>
+                <ul class="infoList">
+                    <li><a href="#">Duties & Taxes</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Term Conditions</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <h5>Follow Us</h5>
+                <ul class="infoList">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">Tiktok</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="account">
+            <div class="copyright">©2022 July. All rights reserved</div>
+            <div class="bankAccount">
+                <i class="fab fa-cc-visa fa-2x"></i>
+                <i class="fab fa-cc-mastercard fa-2x"></i>
+                <i class="fab fa-stripe fa-2x"></i>
+                <i class="fab fa-cc-paypal fa-2x"></i>
+                <select name="" id="">
+                    <option value="">EN</option>
+                    <option value="">FR</option>
+                </select>
+                <select name="" id="">
+                    <option value="">USD</option>
+                    <option value="">EUR</option>
+                </select>
+            </div>
+        </div>
+    </footer>
 
 
-    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/textSlider.js"></script>
+    <script src="js/arcticle.js"></script>
 </body>
 </html>
